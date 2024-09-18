@@ -15,14 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if(this.checked) problemCheckbox.checked = false;
     });
 
-    upsellSituationYes.addEventListener('change', function(){
-        if(this.checked) upsellSituationNo.checked = false;
-    })
-
-    upsellSituationNo.addEventListener('change', function(){
-        if(this.checked) upsellSituationYes.checked = false;
-    })
-
     errorPrintYes.addEventListener('change', function(){
         if(this.checked) errorPrintNo.checked = false;
     })
@@ -111,16 +103,18 @@ document.addEventListener("DOMContentLoaded", () => {
             notifSpan = document.createElement("span");
             notifSpan.id = "notifSpan";
             notifSpan.innerHTML = message;
-            notifSpan.classList.add(type, "slideIn");
+            notifsBox.classList.add("slideIn");
+            notifSpan.classList.add(type);
             notifsBox.appendChild(notifSpan);
         }
         
         setTimeout(() =>{
-            notifSpan.classList.replace("slideIn", "slideOut");
+            notifsBox.classList.replace("slideIn", "slideOut");
         },2700)
         
         setTimeout( () =>{
-            notifSpan.classList.remove(type, "slideOut");
+            notifsBox.classList.remove("slideOut");
+            notifSpan.classList.remove(type);
             if(notifSpan.parentNode) notifsBox.removeChild(notifSpan);
         }, 3000)
     }
