@@ -1,29 +1,35 @@
 :root{
     --primary-color: hsl(214, 85%, 51%);
     --secondary-color: hsl(17, 100%, 50%);
-    --bg-fade1: hsl(0, 0%, 83%);
-    --bg-fade2: hsl(0, 2%, 78%);
+    --gradient-1: #c3cbdc;
+    --gradient-2: #edf1f4;
     --text-color: hsl(0, 0%, 0%);
-    --accent-color: hsl(0, 0%, 100%);
+    --accent-color: hsl(0, 0%, 89%);
 }
 
 .darkMode{
-    --bg-fade1: hsl(0, 0%, 83%);
-    --bg-fade2: hsl(0, 2%, 78%);
+    ---gradient-1: #c3cbdc;
+    --gradient-2: #edf1f4;
     --text-color: hsl(0, 0%, 100%);
     --accent-color: hsl(0, 0%, 17%);
 }
 
-@font-face {
-    font-family: Comfortaa-Regular;
-    src: url(Fontes\Comfortaa-Regular.ttf);
-    font-weight: regulard;
+.comfortaa-family {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
 body{
-    background-image: linear-gradient(bottom var(--bg-fade1), var(--bg-fade2));
+    background-color: var(--gradient-1);
+    background-image: linear-gradient(147deg, var(--gradient-1) 0%, var(--gradient-2) 74%);
     color: var(--text-color);
-    font-family: Comfortaa-Regular;
 }
 
 label{
