@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const problemCause = document.getElementById("problemCause").value = '';
             const resolution = document.getElementById("resolution").innerText = '';
             const clientFeedback = document.getElementById("clientFeedback").value = '';
-            const humorSelection = document.getElementById("humorSelection").value = 'Selecione';
             const upsellDescription = document.getElementById("upsellDescription").innerText = '';
 
             problemCheckbox.checked = false;
