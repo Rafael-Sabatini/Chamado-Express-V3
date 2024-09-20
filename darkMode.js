@@ -1,19 +1,29 @@
 let darkMode = localStorage.getItem("darkMode");
 const darkSwitch = document.getElementById("darkSwitch");
+var dark = document.getElementById("dark");
+var light = document.getElementById("light");
 
-function enableDarkmode(){
-    document.body.classList.add("darkMode");
-    localStorage.setItem('darkMode', 'active');
-  }
+if(!light){
+  light.style.display = 'inline-block'
+}
 
-  function disableDarkmode(){
-    document.body.classList.remove("darkMode");
-    localStorage.setItem("darkMode", null);
-  }
+function enableDarkmode() {
+  document.body.classList.add("darkMode");
+  localStorage.setItem("darkMode", "active");
+}
 
-  if(darkMode === "active") disableDarkmode();
+function disableDarkmode() {
+  document.body.classList.remove("darkMode");
+  localStorage.setItem("darkMode", null);
+}
+
+if (darkMode === "active") enableDarkmode();
 
 darkSwitch.addEventListener("click", () => {
-    darkMode = localStorage.getItem("darkMode");
-    darkMode !== "active" ? enableDarkmode() : disableDarkmode();
-  });
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "active") {
+    enableDarkmode();
+  } else {
+    disableDarkmode();
+  }
+});

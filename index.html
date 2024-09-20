@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://www.softensistemas.com.br/assets/img/favicon.ico" type="image/x-icon">
 </head>
+
 <body class="comfortaa-family">
 
     <div class="container">
@@ -21,13 +23,13 @@
         <h2 class="text-center my-3 lead">Chamado Express</h2>
 
         <div class="form-container">
-        <form>
+            <form>
 
-                
-        <div class="form-check form-switch">
-            <label for="darkSwitch" class="form-label">Modo Escuro</label>
-            <input type="checkbox" class="form-check-input" value="1" id="darkSwitch">
-        </div>
+                <button type="button" id="darkSwitch" class="my-2 mx-2">
+                    <i class="bi bi-moon" id="dark"></i>
+                    <i class="bi bi-brightness-alt-high" id="light"></i>
+                </button>
+
                 <!-- Row 1: Tipo de chamado, Nº do documento, Mensagem de erro -->
                 <div class="row mb-3">
                     <div class="col-md-3">
@@ -53,7 +55,7 @@
                     <div class="col-md-2">
 
                         <label for="numeroDocumento" class="form-label">Nº do documento</label>
-                        <input type="text" class="form-control" id="docNumber" placeholder="ex: 55000001">
+                        <input type="text" class="form-control" id="docNumber" placeholder="ex: 5500001">
 
                     </div>
 
@@ -98,12 +100,14 @@
                         <label class="form-label">Venda adicional?</label><br>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="vendaAdicional" id="upsellSituationYes" value="sim">
+                            <input class="form-check-input" type="radio" name="vendaAdicional" id="upsellSituationYes"
+                                value="sim">
                             <label class="form-check-label" for="upsellSituationYes">Sim</label>
                         </div>
-                        
+
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="vendaAdicional" id="upsellSituationNo" value="nao">
+                            <input class="form-check-input" type="radio" name="vendaAdicional" id="upsellSituationNo"
+                                value="nao">
                             <label class="form-check-label" for="upsellSituationNo">Não</label>
                         </div>
 
@@ -112,11 +116,13 @@
                     <div class="col-md-4 mt-3">
                         <label class="form-label">Mensagens ou capturas de erros</label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="capturasErro" id="errorPrintYes" value="sim">
+                            <input class="form-check-input" type="radio" name="capturasErro" id="errorPrintYes"
+                                value="sim">
                             <label class="form-check-label" for="errorPrintYes">Sim</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="capturasErro" id="errorPrintNo" value="nao">
+                            <input class="form-check-input" type="radio" name="capturasErro" id="errorPrintNo"
+                                value="nao">
                             <label class="form-check-label" for="errorPrintNo">Não</label>
                         </div>
                     </div>
@@ -156,13 +162,14 @@
                 </div>
             </form>
         </div>
-        
+
     </div>
 
-    
+
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="darkMode.js" defer></script>
+    <script src="darkMode.js"></script>
 </body>
+
 </html>

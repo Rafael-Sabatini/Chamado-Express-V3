@@ -1,11 +1,12 @@
 :root{
-    --primary-color: hsl(214, 85%, 51%);
-    --secondary-color: hsl(17, 100%, 50%);
     --gradient-1: hsl(221, 26%, 81%);
     --gradient-2: hsl(180, 18%, 79%);
     --gradient-3: hsl(221, 26%, 81%);
     --text-color: hsl(0, 0%, 0%);
     --accent-color: hsl(0, 0%, 89%);
+    --checked-color: hsl(120, 85%, 40%);
+    --checkbox-color: hsl(0, 0%, 97%);
+    --mode-color: hsl(39, 100%, 50%);
 }
 
 .darkMode{
@@ -14,6 +15,9 @@
     --gradient-3: hsl(0, 0%, 11%);
     --text-color: hsl(0, 0%, 100%);
     --accent-color: hsl(0, 0%, 17%);
+    --checked-color: hsl(120, 74%, 25%);
+    --checkbox-color: hsl(0, 0%, 13%);
+    --mode-color: hsl(39, 100%, 50%);
 }
 
 .comfortaa-family {
@@ -50,6 +54,33 @@ input:focus{
     outline: none;
 }
 
+#darkSwitch{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    padding: 0;
+    border: 2px inset var(--accent-color);
+    font-size: 20px;
+  }
+  
+  #darkSwitch i{
+    color: var(--mode-color);
+  }
+  
+  #darkSwitch i:last-child{
+    display: none;
+  }
+  
+  .darkMode #darkSwitch i:first-child{
+    display: none;
+  }
+  
+  .darkMode #darkSwitch i:last-child{
+    display: block;
+  }
+
 .form-container{
     background-color: var(--accent-color);
     border-radius: 10px;
@@ -59,7 +90,7 @@ input:focus{
 .form-select{
     appearance: none;
     background-color: var(--accent-color);
-    border: 2px outset var(--gradient-1);
+    border: 2px inset var(--gradient-1);
     color: var(--text-color);
 }
 
@@ -67,6 +98,7 @@ input:focus{
     background-color: var(--accent-color);
     border: 2px inset var(--gradient-1);
     color: var(--text-color);
+    border-radius: 10px;
 }
 
 .form-control::placeholder{
@@ -76,6 +108,7 @@ input:focus{
 .form-control:focus{
     transform: scale(105%);
     background-color: var(--accent-color);
+    color: var(--text-color);
 }
 
 #notifsBox{
@@ -142,3 +175,12 @@ input:focus{
     content: "Adicionais vendidos";
 }
 
+.form-check-input{
+    background-color: var(--checkbox-color);
+    border: 2px inset var(--checkbox-color);
+    color: var(--text-color);
+}
+
+.form-check-input:checked{
+    background-color: var(--checked-color);
+}
