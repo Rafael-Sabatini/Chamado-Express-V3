@@ -201,7 +201,7 @@ input:focus{
 }
 
 #upsellDescription:empty::before{
-    content: "Adicionais vendidos";
+    content: "Descreva o upsell (módulo vendido, negociação, etc)";
     color: hsla(0, 0%, 50%, 0.801);
 }
 
@@ -220,4 +220,28 @@ footer{
     background-color: var(--gradient-1);
     padding: 10px;
     border-radius: 15px;
+}
+
+#infoBtn{
+    position: absolute;
+    right: 130px;
+    top: 90px;
+
+}
+
+.modal-body{
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.modal-header{
+    background-color: var(--gradient-1);
+    color: var(--text-color);
+    border: none;
+}
+
+.modal-footer{
+    background-color: var(--gradient-1);
+    color: var(--text-color);
+    border: none;
 }

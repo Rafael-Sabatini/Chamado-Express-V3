@@ -29,10 +29,60 @@
                     <i class="bi bi-moon" id="dark"></i>
                     <i class="bi bi-brightness-alt-high" id="light"></i>
                 </button>
+               
+
+                <!-- Modal Diretrizes para Preenchimento -->
+                <div class="modal fade" id="diretriz" tabindex="-1" aria-labelledby="auxilioPrenchimento" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="auxilioPrenchimento">Auxílio Preenchimento</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ● HUMOR DO CLIENTE: Informar (Bravo/normal/alegre) (OBRIGATÓRIO)
+                                <br><br>
+                                ● PROBLEMA/DÚVIDA: Informar o problema que o cliente informou ou que você
+                                técnico identificou. (OBRIGATÓRIO)
+                                <br><br>
+                                ● MENSAGEM DE ERRO: Digitar ou copiar igual a que apresentou ou Anexar um print
+                                principalmente se for um erro específico e raro para que outras pessoas tenham
+                                conhecimento seja do sistema ou não. (OBRIGATÓRIO)
+                                <br><br>
+                                ● CAUSA DO PROBLEMA: Descrever o que ocasionou todo problema. (OBRIGATÓRIO)
+                                <br><br>
+                                ● SOLUÇÃO PROPOSTA/REALIZADA: Descrever o que você propôs para resolver
+                                por definitivo a causa do problema para que o mesmo não tenha recorrências, e o
+                                que foi de fato realizado, caso tenha algum empecilho descrever o motivo e proposta
+                                de solução. (OBRIGATÓRIO)
+                                <br><br>
+                                ● FEEDBACK DO CLIENTE: Descrever nome das pessoas caso tenha mais de uma
+                                envolvida junto com numero de contato caso tenha mais de um, descrever a opinião
+                                do cliente junto com o que ele propôs realizar. (OBRIGATÓRIO)
+                                <br><br>
+                                ● DESCRIÇÃO UPSELL: Descrever o que foi ofertado junto com valores
+                                propostos além do feedback do cliente e seus argumentos utilizados se foi
+                                efetivado/ofertado a venda ou não junto com motivo. Dica: - olhar data cadastro /
+                                ramo atividade / módulos ativos, para fortalecer argumentos. (OBRIGATÓRIO)
+                                <br><br>
+                                ● PRINTS ERRO OU MENSAGENS RELEVANTES: Anexar provas de imagens dos
+                                testes e erros apresentados principalmente em casos complexos que exigem
+                                acompanhamento e envolverem problemas com pessoas, impostos, sistema
+                                operacional, erros complexos. (OPCIONAL)
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Row 1: Tipo de chamado, Nº do documento, Mensagem de erro -->
                 <div class="row mb-3">
                     <div class="col-md-3">
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#diretriz" id="infoBtn">
+                            <i class="bi bi-info"></i>
+                            Ajuda
+                        </button>
 
                         <label class="form-label">Tipo de chamado</label><br>
 
@@ -52,21 +102,23 @@
 
                     </div>
 
-                    <div class="col-md-2">
+                    <div class="col-md-9">
 
                         <label for="numeroDocumento" class="form-label">Nº do documento</label>
-                        <input type="text" class="form-control" id="docNumber" placeholder="ex: 550000001">
+                        <input type="text" class="form-control" id="docNumber" placeholder="ex: 31, 34, 35">
 
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-12">
                         <label for="mensagemErro" class="form-label">Mensagem de erro</label>
-                        <input type="text" class="form-control" id="errorMessage" placeholder="ex: Rejeição 628">
+                        <input type="text" class="form-control" id="errorMessage"
+                            placeholder="ex: 628: Total da NF superior ao valor limite estabelecido pela Sefaz">
                     </div>
 
                     <div class="col-md-13 mt-2">
                         <label for="causaProblema" class="form-label">Causa do problema</label>
-                        <input type="text" class="form-control" id="problemCause" placeholder="ex: Falta tabelas">
+                        <input type="text" class="form-control" id="problemCause"
+                            placeholder="ex: Descreva o que ocasionou o erro ou situação">
                     </div>
                 </div>
 
@@ -83,7 +135,8 @@
 
                     <div class="col-md-12">
                         <label for="retornoCliente" class="form-label">Retorno do cliente</label>
-                        <input type="text" class="form-control" id="clientFeedback" placeholder="Resolveu?">
+                        <input type="text" class="form-control" id="clientFeedback"
+                            placeholder="ex: Satisção do cliente | Compreendeu ou não a solução, Número e nome do(s) envolvidos quando tiver mais de 1 envolvido">
                     </div>
 
                     <div class="col-md-3 mt-2">
@@ -97,7 +150,7 @@
 
                     <div class="col-md-3 mt-3">
 
-                        <label class="form-label">Venda adicional?</label><br>
+                        <label class="form-label">Realizado upsell?</label><br>
 
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="vendaAdicional" id="upsellSituationYes"
@@ -131,7 +184,7 @@
                 <!-- Row 4: Situação da venda -->
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <label for="upsellDescription" class="form-label">Situação da venda</label>
+                        <label for="upsellDescription" class="form-label">Oportunidade do upsell</label>
                         <span class="form-control" id="upsellDescription" rows="3" contenteditable="true"></span>
                     </div>
                 </div>
@@ -149,14 +202,14 @@
                 <footer class="mx-auto row container my-3">
                     <div class="col-6">
 
-                    <h4>Desenvolvido por</h4>
+                        <h4>Desenvolvido por</h4>
                         - Rafael Romera - UI/UX e Front-End<br>
                         - Gustavo Fernandes - Lógica e Back-end <br>
 
                     </div>
                     <div class="col-6" style="text-align: end;">
-                        
-                    <h4>Créditos</h4>
+
+                        <h4>Créditos</h4>
                         Renato Jean - Design Original <br>
                         Luan "Bem" <br>
                         Soften Sistemas <img src="img/logo-soften2.png" class="img-fluid" style="width: 2%;">
@@ -168,7 +221,7 @@
                     <img src="img/logo-midres.png" alt="gerencieaqui" class="img-fluid" style="width: 4%;">
                     <img src="img/SIEM.png" alt="siem" class="img-fluid" style="width: 4%;">
                 </div>
-                
+
             </form>
         </div>
 
