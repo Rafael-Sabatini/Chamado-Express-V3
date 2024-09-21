@@ -1,29 +1,44 @@
 let darkMode = localStorage.getItem("darkMode");
 const darkSwitch = document.getElementById("darkSwitch");
-var dark = document.getElementById("dark");
-var light = document.getElementById("light");
-
-if(!light){
-  light.style.display = 'inline-block'
-}
 
 function enableDarkmode() {
   document.body.classList.add("darkMode");
   localStorage.setItem("darkMode", "active");
+
+  darkSwitch.classList.add("pushIn");
+
+  setTimeout( () => {
+    darkSwitch.classList.remove("pushIn");
+  }, 700);
+ 
+  darkSwitch.style.borderStyle = "inset";
+  darkSwitch.style.borderColor = "var(--accent-color)";
+  darkSwitch.style.borderWidth = "2px";
 }
 
 function disableDarkmode() {
   document.body.classList.remove("darkMode");
   localStorage.setItem("darkMode", null);
+
+  darkSwitch.classList.add("pushOut");
+
+  setTimeout( () => {
+    darkSwitch.classList.remove("pushOut");
+  }, 700)
+
+  darkSwitch.style.borderStyle = "inset";
+  darkSwitch.style.borderColor = "var(--accent-color)";
+  darkSwitch.style.borderWidth = "2px";
+
+
+  darkSwitch.style.borderStyle = "outset";
+  darkSwitch.style.borderColor = "var(--accent-color)";
+  darkSwitch.style.borderWidth = "2px";  
 }
 
 if (darkMode === "active") enableDarkmode();
 
 darkSwitch.addEventListener("click", () => {
   darkMode = localStorage.getItem("darkMode");
-  if (darkMode !== "active") {
-    enableDarkmode();
-  } else {
-    disableDarkmode();
-  }
+  darkMode !== "active" ? enableDarkmode() : disableDarkmode();
 });

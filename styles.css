@@ -61,10 +61,10 @@ input:focus{
     border-radius: 50%;
     background-color: var(--accent-color);
     padding: 0;
-    border: 2px inset var(--accent-color);
+    border: none;
     font-size: 20px;
-  }
-  
+}
+
   #darkSwitch i{
     color: var(--mode-color);
   }
@@ -81,28 +81,30 @@ input:focus{
     display: block;
   }
 
+
 .form-container{
     background-color: var(--accent-color);
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 2px 3px 20px var(--accent-color);
 }
 
 .form-select{
     appearance: none;
     background-color: var(--accent-color);
-    border: 2px inset var(--gradient-1);
+    border: 1px inset var(--gradient-1);
     color: var(--text-color);
 }
 
 .form-control{
     background-color: var(--accent-color);
-    border: 2px inset var(--gradient-1);
+    border: 1px inset var(--gradient-1);
     color: var(--text-color);
     border-radius: 10px;
 }
 
 .form-control::placeholder{
-    color: var(--text-color);
+    color: hsla(0, 0%, 50%, 0.801);
 }
 
 .form-control:focus{
@@ -159,6 +161,24 @@ input:focus{
     }
 }
 
+@keyframes pushIn {
+    from{
+        border: 2px solid var(--accent-color);
+    }
+    to{
+        border: 2px inset var(--accent-color);
+    }
+}
+
+@keyframes pushOut {
+    from{
+        border: 2px solid var(--accent-color);
+    }
+    to{
+        border: 2px outset var(--accent-color);
+    }
+}
+
 .slideIn{
     animation: slideIn 1s;
 }
@@ -167,20 +187,37 @@ input:focus{
     animation: slideOut 1s;
 }
 
+.pushIn{
+    animation: pushIn 500ms;
+}
+
+.pushOut{
+    animation: pushOut 500ms;
+}
+
 #resolution:empty::before{
     content: "Descreva a resolução";
+    color: hsla(0, 0%, 50%, 0.801);
 }
 
 #upsellDescription:empty::before{
     content: "Adicionais vendidos";
+    color: hsla(0, 0%, 50%, 0.801);
 }
 
 .form-check-input{
     background-color: var(--checkbox-color);
-    border: 2px inset var(--checkbox-color);
+    border: 1px inset var(--checkbox-color);
     color: var(--text-color);
 }
 
 .form-check-input:checked{
     background-color: var(--checked-color);
+}
+
+footer{
+    user-select: none;
+    background-color: var(--gradient-1);
+    padding: 10px;
+    border-radius: 15px;
 }
