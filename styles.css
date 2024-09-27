@@ -42,6 +42,13 @@ body{
     color: var(--text-color);
 }
 
+h1{
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 2rem;
+}
+
 img{
     user-select: none;
 }
@@ -86,18 +93,18 @@ input:focus{
     background-color: var(--accent-color);
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 2px 3px 20px var(--accent-color);
+    box-shadow: 5px 6px 5px black;
 }
 
 .form-select{
     appearance: none;
-    background-color: var(--accent-color);
+    background-color: var(--gradient-1);
     border: 1px inset var(--gradient-1);
     color: var(--text-color);
 }
 
 .form-control{
-    background-color: var(--accent-color);
+    background-color: var(--gradient-1);
     border: 1px inset var(--gradient-1);
     color: var(--text-color);
     border-radius: 10px;
@@ -109,7 +116,7 @@ input:focus{
 
 .form-control:focus{
     transform: scale(105%);
-    background-color: var(--accent-color);
+    background-color: var(--gradient-1);
     color: var(--text-color);
 }
 
@@ -229,19 +236,13 @@ footer{
 
 }
 
-.modal-body{
-    background-color: var(--accent-color);
-    color: var(--text-color);
-}
-
 .modal-header{
     background-color: var(--gradient-1);
     color: var(--text-color);
     border: none;
 }
 
-.modal-footer{
-    background-color: var(--gradient-1);
+.modal-body{
+    background-color: var(--accent-color);
     color: var(--text-color);
-    border: none;
 }

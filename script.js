@@ -49,7 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
             createNotif("Seleciona a situação do upsell", "error")
             return;
         }
-        if(upsellSituationYes.checked || upsellSituationNo.checked && !upsellDescription.innerText){
+        else if(upsellSituationYes.checked && upsellDescription.value === ""){
+            createNotif("Descreva a situação do upsell", "error")
+            return;
+        }
+        else if(upsellSituationNo.checked && upsellDescription.value === ""){
             createNotif("Descreva a situação do upsell", "error")
             return;
         }

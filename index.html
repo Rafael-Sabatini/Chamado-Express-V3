@@ -20,10 +20,12 @@
 
         <div id="notifsBox"></div>
 
-        <h1 class="text-center my-3 lead" style="user-select: none;">Chamado Express</h1>
+        
 
         <div class="form-container">
             <form>
+
+                <h1 style="user-select: none;">Chamado Express</h1>
 
                 <button type="button" id="darkSwitch" class="my-2 mx-2">
                     <i class="bi bi-moon" id="dark"></i>
@@ -39,7 +41,7 @@
                                 <h1 class="modal-title fs-5" id="auxilioPrenchimento">Auxílio Preenchimento</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white;"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" style="border-radius: 10px;">
                                 ● HUMOR DO CLIENTE: Informar (Bravo/normal/alegre) (OBRIGATÓRIO)
                                 <br><br>
                                 ● PROBLEMA/DÚVIDA: Informar o problema que o cliente informou ou que você
@@ -47,7 +49,7 @@
                                 <br><br>
                                 ● MENSAGEM DE ERRO: Digitar ou copiar igual a que apresentou ou Anexar um print
                                 principalmente se for um erro específico e raro para que outras pessoas tenham
-                                conhecimento seja do sistema ou não. (OBRIGATÓRIO)
+                                conhecimento seja do sistema ou não. (OPCIONAL)
                                 <br><br>
                                 ● CAUSA DO PROBLEMA: Descrever o que ocasionou todo problema. (OBRIGATÓRIO)
                                 <br><br>
@@ -70,7 +72,6 @@
                                 acompanhamento e envolverem problemas com pessoas, impostos, sistema
                                 operacional, erros complexos. (OPCIONAL)
                             </div>
-                            <div class="modal-footer"></div>
                         </div>
                     </div>
                 </div>
@@ -102,20 +103,20 @@
 
                     </div>
 
-                    <div class="col-md-9">
+                    <div class="col-md-3">
 
                         <label for="numeroDocumento" class="form-label">Nº do documento</label>
                         <input type="text" class="form-control" id="docNumber" placeholder="ex: 31, 34, 35">
 
                     </div>
 
-                    <div class="col-md-12 my-2">
+                    <div class="col-md-6">
                         <label for="mensagemErro" class="form-label">Mensagem de erro</label>
                         <input type="text" class="form-control" id="errorMessage"
-                            placeholder="ex: 628: Total da NF superior ao valor limite estabelecido pela Sefaz">
+                            placeholder="Rejeição 204: Duplicidade de NF-e">
                     </div>
 
-                    <div class="col-md-13 mt-2">
+                    <div class="col-md-12 mt-2">
                         <label for="causaProblema" class="form-label">Causa do problema</label>
                         <input type="text" class="form-control" id="problemCause"
                             placeholder="ex: Descreva o que ocasionou o erro ou situação">
@@ -166,7 +167,7 @@
 
                     </div>
 
-                    <div class="col-md-4 mt-3">
+                    <div class="col-md-6 mt-3">
                         <label class="form-label">Mensagens ou capturas de erros</label><br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="capturasErro" id="errorPrintYes"
