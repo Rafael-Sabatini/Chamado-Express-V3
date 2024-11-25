@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemCause.placeholder = "Descreva o que ocasionou o erro ou situação"
+            problemLabel.innerHTML = "Causa do Problema"
         }
     });
 
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             errorMessage.disabled = true;
             problemCause.disabled = true;
 
+            problemLabel.innerHTML = "Causa do Problema"
             resolutionLabel.innerHTML = "Relato do Contato"
             resolution.setAttribute("data-placeholder", "Descreva o relato do contato com o cliente");
         }
@@ -154,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             problemCause.disabled = false;
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
+             problemLabel.innerHTML = "Causa do Problema"
         }
         else if(doubtCheckbox.checked) {
 
@@ -213,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemCause.placeholder = "Descreva o que ocasionou o erro ou situação"
+            problemLabel.innerHTML = "Causa do Problema"
         }
         else{
 
@@ -280,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemCause.placeholder = "Descreva o que ocasionou o erro ou situação"
+            problemLabel.innerHTML = "Causa do Problema"
         }
     }
     })
