@@ -136,14 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
             addText('UPSELL', document.querySelector('#upsellSituationYes').checked ? 'Sim' : (document.querySelector('#upsellSituationNo').checked ? 'Não' : ''));
             addText('DESCRIÇÃO UPSELL', upsellDescription.innerText);
 
+            let finalText = textsToCopy.join('');
+            navigator.clipboard.writeText(finalText);
+            createNotif("Texto Copiado!", "success");
+
             resolution.innerText = "";
             clientFeedback.value = "";
             humorSelection.value = "Selecione";
             upsellDescription.innerText = "";
-    
-            let finalText = textsToCopy.join('');
-            navigator.clipboard.writeText(finalText);
-            createNotif("Texto Copiado!", "success");
     
             contactCheckbox.checked = false;
             upsellSituationYes.checked = false;
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             problemCause.disabled = false;
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
-             problemLabel.innerHTML = "Causa do Problema"
+            problemLabel.innerHTML = "Causa do Problema"
         }
         else if(doubtCheckbox.checked) {
 
