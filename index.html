@@ -20,8 +20,6 @@
 
         <div id="notifsBox"></div>
 
-        
-
         <div class="form-container">
             <form>
 
@@ -80,7 +78,7 @@
                 <div class="row mb-3">
                     <div class="col-md-3">
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#diretriz" id="infoBtn">
+                        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#diretriz" id="infoBtn">
                             <i class="bi bi-info"></i>
                             Ajuda
                         </button>
@@ -101,6 +99,11 @@
 
                         </div>
 
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="contactCheckbox" value="contatoAtivo">
+                            <label for="contactCheckbox" class="form-check-label">Contato Ativo</label>
+                        </div>
+
                     </div>
 
                     <div class="col-md-3">
@@ -117,16 +120,16 @@
                     </div>
 
                     <div class="col-md-12 mt-2">
-                        <label for="causaProblema" class="form-label">Causa do problema</label>
+                        <label for="causaProblema" class="form-label" id="problemLabel">Causa do problema</label>
                         <input type="text" class="form-control" id="problemCause"
-                            placeholder="ex: Descreva o que ocasionou o erro ou situação">
+                            placeholder="Descreva o que ocasionou o erro ou situação">
                     </div>
                 </div>
 
                 <!-- Row 2: Resolução -->
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <label for="resolucao" class="form-label">Resolução</label>
+                        <label for="resolucao" class="form-label" id="resolutionLabel">Resolução</label>
                         <span class="form-control" id="resolution" rows="3" contenteditable="true"></span>
                     </div>
                 </div>
@@ -137,12 +140,13 @@
                     <div class="col-md-12">
                         <label for="retornoCliente" class="form-label">Retorno do cliente</label>
                         <input type="text" class="form-control" id="clientFeedback"
-                            placeholder="ex: Satisção do cliente | Compreendeu ou não a solução, Número e nome do(s) envolvidos quando tiver mais de 1 envolvido">
+                            placeholder="Satisção do cliente | Compreendeu ou não a solução, Número e nome do(s) envolvidos quando tiver mais de 1 envolvido">
                     </div>
 
                     <div class="col-md-3 mt-2">
                         <label for="humorSelection" class="form-label">Humor do cliente</label>
                         <select class="form-select" id="humorSelection">
+                            <option value="Selecione">Selecione</option>
                             <option value="Bom">Bom</option>
                             <option value="Regular">Regular</option>
                             <option value="Ruim">Ruim</option>

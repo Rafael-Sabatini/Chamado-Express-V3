@@ -129,7 +129,7 @@ input:focus{
 
 #darkMode{
     position: absolute;
-    right: 0;
+    left: 0;
 }
 
 .success{
@@ -168,24 +168,6 @@ input:focus{
     }
 }
 
-@keyframes pushIn {
-    from{
-        border: 2px solid var(--accent-color);
-    }
-    to{
-        border: 2px inset var(--accent-color);
-    }
-}
-
-@keyframes pushOut {
-    from{
-        border: 2px solid var(--accent-color);
-    }
-    to{
-        border: 2px outset var(--accent-color);
-    }
-}
-
 .slideIn{
     animation: slideIn 1s;
 }
@@ -194,16 +176,8 @@ input:focus{
     animation: slideOut 1s;
 }
 
-.pushIn{
-    animation: pushIn 500ms;
-}
-
-.pushOut{
-    animation: pushOut 500ms;
-}
-
 #resolution:empty::before{
-    content: "Descreva a resolução";
+    content: attr(data-placeholder);
     color: hsla(0, 0%, 50%, 0.801);
 }
 
@@ -231,7 +205,7 @@ footer{
 
 #infoBtn{
     position: absolute;
-    right: 130px;
+    right: 15vw;
     top: 90px;
 
 }
