@@ -19,10 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const problemLabel = document.getElementById('problemLabel');
     const resolutionLabel = document.getElementById('resolutionLabel');
 
-    
-    // Array para armazenar os textos formatados
-    let textsToCopy = [];
-
     resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
 
     problemCheckbox.addEventListener('change', function () {
@@ -98,16 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (this.checked) errorPrintYes.checked = false;
     })
 
-    function addText(label, value) {
-        if (value) {
-            textsToCopy.push(`${label}: ${value}\n\n`).toString();
-        }
-    }
-
     document.getElementById('copyBtn').addEventListener('click', function (event) {
         event.preventDefault();
 
-        if(contactCheckbox.checked) {
+        // Array para armazenar os textos formatados
+        let textsToCopy = [];
+
+        function addText(label, value) {
+            if (value) {
+                textsToCopy.push(`${label}: ${value}\n\n`);
+            }
+        }
+
+        if(contactCheckbox.checked && !doubtCheckbox.checked && !problemCheckbox.checked) {
             if (!resolution.innerText) {
                 createNotif("Informe a resolução do suporte", "error")
                 return;
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             addText('DESCRIÇÃO UPSELL', upsellDescription.innerText);
 
             let finalText = textsToCopy.join('');
-            navigator.clipboard.writeText(finalText);
+            navigator.clipboard.writeText(finalText.trimEnd());
             createNotif("Texto Copiado!", "success");
 
             resolution.innerText = "";
@@ -157,8 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemLabel.innerHTML = "Causa do Problema"
+
+            finalText = "";
         }
-        else if(doubtCheckbox.checked) {
+        else if(doubtCheckbox.checked && !problemCheckbox.checked && !contactCheckbox.checked) {
 
             if (!resolution.innerText) {
                 createNotif("Informe a resolução do suporte", "error")
@@ -195,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
             addText('MENSAGENS OU PRINT DE ERROS', document.querySelector('#errorPrintYes').checked ? 'Sim' : (document.querySelector('#errorPrintNo').checked ? 'Não' : ''));
 
             let finalText = textsToCopy.join('');
-            navigator.clipboard.writeText(finalText);
+            navigator.clipboard.writeText(finalText.trimEnd());
             createNotif("Texto Copiado!", "success");
 
             problemCause.value = '';
@@ -217,14 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemCause.placeholder = "Descreva o que ocasionou o erro ou situação"
             problemLabel.innerHTML = "Causa do Problema"
-        }
-        else{
 
-        if (!problemCheckbox.checked && !doubtCheckbox.checked) {
-            createNotif("Selecione um tipo de chamado", "error");
-            return;
+            finalText = "";
         }
-        else if (!problemCause.value) {
+        else if(problemCheckbox.checked && !doubtCheckbox.checked && !contactCheckbox.checked){
+
+        if (!problemCause.value) {
             createNotif("Descreva a causa do problema", "error")
             return;
         }
@@ -264,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Unir todos os textos em uma string com quebras de linha
             let finalText = textsToCopy.join('');
-            navigator.clipboard.writeText(finalText);
+            navigator.clipboard.writeText(finalText.trimEnd());
             createNotif("Texto Copiado!", "success");
 
             docNumber.value = '';
@@ -285,6 +284,8 @@ document.addEventListener("DOMContentLoaded", () => {
             resolution.setAttribute("data-placeholder", "Descreva a resolução do problema");
             problemCause.placeholder = "Descreva o que ocasionou o erro ou situação"
             problemLabel.innerHTML = "Causa do Problema"
+
+            finalText = "";
         }
     }
     })
