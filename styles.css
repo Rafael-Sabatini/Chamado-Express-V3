@@ -204,10 +204,8 @@ footer{
 }
 
 #infoBtn{
-    position: absolute;
-    right: 15vw;
-    top: 90px;
-
+    position: sticky;
+    right: 1;
 }
 
 .modal-header{
@@ -219,4 +217,13 @@ footer{
 .modal-body{
     background-color: var(--accent-color);
     color: var(--text-color);
+    border-radius: 10px;
+}
+
+.modal-footer{
+    background-color: var(--gradient-2);
+}
+
+.modal-content{
+    background-color: var(--accent-color);
 }

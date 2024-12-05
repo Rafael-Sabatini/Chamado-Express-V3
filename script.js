@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             docNumber.disabled = true;
             errorMessage.disabled = true;
+            problemCause.disabled = false;
 
             problemLabel.innerHTML = "Dúvida do cliente"
             resolutionLabel.innerHTML = "Explicação"

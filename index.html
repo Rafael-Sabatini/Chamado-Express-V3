@@ -32,14 +32,20 @@
                
 
                 <!-- Modal Diretrizes para Preenchimento -->
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#diretriz" id="infoBtn">
+                    <i class="bi bi-info"></i>
+                    Ajuda
+                </button>
+
                 <div class="modal fade" id="diretriz" tabindex="-1" aria-labelledby="auxilioPrenchimento" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="auxilioPrenchimento">Auxílio Preenchimento</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white;"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body" style="border-radius: 10px;">
+
+                            <div class="modal-body">
                                 ● HUMOR DO CLIENTE: Informar (Bravo/normal/alegre) (OBRIGATÓRIO)
                                 <br><br>
                                 ● PROBLEMA/DÚVIDA: Informar o problema que o cliente informou ou que você
@@ -70,6 +76,9 @@
                                 acompanhamento e envolverem problemas com pessoas, impostos, sistema
                                 operacional, erros complexos. (OPCIONAL)
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -77,11 +86,6 @@
                 <!-- Row 1: Tipo de chamado, Nº do documento, Mensagem de erro -->
                 <div class="row mb-3">
                     <div class="col-md-3">
-
-                        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#diretriz" id="infoBtn">
-                            <i class="bi bi-info"></i>
-                            Ajuda
-                        </button>
 
                         <label class="form-label">Tipo de chamado</label><br>
 
